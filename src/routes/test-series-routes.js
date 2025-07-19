@@ -8,12 +8,12 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 
 // Define Test Series routers
-router.post('/create', authMiddleware,permitRoles(['admin']), testSeriesController.createTestSeries);
-router.post('/upload', permitRoles(['admin']), uploadCSV.single('file'),testSeriesController.uploadTestSeries);
-router.put('/update/:id', authMiddleware,permitRoles(['admin']), testSeriesController.updateTestSeries);
-router.delete('/delete/:id', authMiddleware,permitRoles(['admin']), testSeriesController.deleteTestSeries);
+router.post('/create', authMiddleware,permitRoles(['admin','instructor']), testSeriesController.createTestSeries);
+router.post('/upload', permitRoles(['admin','instructor']), uploadCSV.single('file'),testSeriesController.uploadTestSeries);
+router.put('/update/:id', authMiddleware,permitRoles(['admin','instructor']), testSeriesController.updateTestSeries);
+router.delete('/delete/:id', authMiddleware,permitRoles(['admin','instructor']), testSeriesController.deleteTestSeries);
 router.get('/all',testSeriesController.getAllTestSeries);
-router.get('/results/:testId',permitRoles(['admin']),testSeriesController.fetchAllTestResultUsingTestId);
+router.get('/results/:testId',permitRoles(['admin','instructor']),testSeriesController.fetchAllTestResultUsingTestId);
 
 router.get('/active',testSeriesController.getAllActiveTestSeries);
 router.post('/submit',testSeriesController.learnerTestSubmit);
