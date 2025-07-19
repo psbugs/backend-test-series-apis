@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean:uploads": "rimraf ./src/uploads/",
-    "start": "npm run clean:uploads && nodemon src/server.js"
+    "start": "npm run clean:uploads && nodemon src/index.js"
   },
   "repository": {
     "type": "git",
