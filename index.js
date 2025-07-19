@@ -5,8 +5,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
-const connectDB = require('./config/db');
-const allRoutes = require('./routes/index');
+const connectDB = require('./src/config/db');
+const allRoutes = require('./src/routes/index');
 
 const testSeriesApp = express();
 
