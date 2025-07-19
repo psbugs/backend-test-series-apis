@@ -60,3 +60,7 @@ npm start
 📁 Bulk upload via CSV (for questions)
 
 🔄 Attempt limit, random shuffle, and skill score integration
+
+We have also managed login feature on the basis of role of a user
+if role is instructor we must redirect to admin related api's
+else redirected to learner dashboard
