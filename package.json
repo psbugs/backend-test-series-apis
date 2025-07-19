@@ -1,0 +1,47 @@
+{
+  "name": "test-series-apis",
+  "version": "1.0.0",
+  "description": "A simple app to illustrates test series relevant apis.",
+  "main": "index.js",
+  "scripts": {
+    "clean:uploads": "rimraf ./src/uploads/",
+    "start": "npm run clean:uploads && nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psbugs/backend-test-series-apis.git"
+  },
+  "keywords": [
+    "REST",
+    "|",
+    "Mongodb",
+    "|",
+    "Express",
+    "Js",
+    "|",
+    "Node",
+    "js"
+  ],
+  "author": "Praveen Sunhare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psbugs/backend-test-series-apis/issues"
+  },
+  "homepage": "https://github.com/psbugs/backend-test-series-apis#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "dompurify": "^3.2.6",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "jsdom": "^26.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.4",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.1"
+  }
+}
