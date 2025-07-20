@@ -4,11 +4,9 @@ const User = require('../models/User');
 const getAnalytics = async (req, res) => {
   try {
     const submissions = await TestAttempt.find().populate('userId', 'name email');
-    console.log('submissions',submissions)
 
     // Total number of unique participants
     const participantsSet = new Set(submissions.map(s => s.userId?._id?.toString()));
-    console.log('participantsSet',participantsSet)
     const participants = participantsSet.size;
 
     // Average score
