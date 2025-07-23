@@ -13,7 +13,8 @@ const UserSchema = new mongoose.Schema({
     type: String,
     enum: ['admin', 'instructor', 'learner','super admin'],
     default: 'learner'
-  }
+  },
+  permissions:[String]
 });
 
 module.exports = mongoose.model('User', UserSchema);

@@ -5,6 +5,7 @@ const uploadCSV = require('../middlewares/csvUploadMiddleware');
 const auth = require('../middlewares/authMiddleware');
 const permitRoles = require('../middlewares/roleMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const checkPermission = require('../middlewares/checkPermission');
 
 
 // Define Test Series routers
@@ -16,7 +17,7 @@ router.get('/all',testSeriesController.getAllTestSeries);
 router.get('/results/:testId',permitRoles(['admin','instructor']),testSeriesController.fetchAllTestResultUsingTestId);
 
 router.get('/active',testSeriesController.getAllActiveTestSeries);
-router.post('/submit',testSeriesController.learnerTestSubmit);
+router.post('/submit',checkPermission('create:test-series'),testSeriesController.learnerTestSubmit);
 router.get('/result/:userId',testSeriesController.fetchLearnerResultUsingUserId);
 router.post('/fetch-questions', testSeriesController.fetchQuestionsByTestId);
 
